@@ -2,6 +2,8 @@
 name = "derive-builder"
 version = "0.1.0"
 authors = ["David Pedersen <david.pdrsn@gmail.com>"]
+description = "Derive builder macro"
+license = "MIT"
 
 [dependencies]
 syn = "0.11.11"

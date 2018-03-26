@@ -114,7 +114,7 @@ fn impl_builder(ast: &syn::DeriveInput) -> quote::Tokens {
 
             quote! {
                 #[inline]
-                fn #name<T: Into<#ty>>(self, #name: T) -> #builder_name<#(#with_withouts),*> {
+                pub fn #name<T: Into<#ty>>(self, #name: T) -> #builder_name<#(#with_withouts),*> {
                     #builder_name {
                         #(#assigns),*
                     }
@@ -151,7 +151,7 @@ fn impl_builder(ast: &syn::DeriveInput) -> quote::Tokens {
 
         impl #builder_name<#(#done_withs),*> {
             #[inline]
-            fn done(self) -> #name {
+            pub fn done(self) -> #name {
                 #name { #(#done_cons_fields),* }
             }
         }

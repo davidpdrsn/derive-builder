@@ -134,7 +134,7 @@ fn impl_builder(ast: &syn::DeriveInput) -> quote::Tokens {
 
         impl #name {
             #[inline]
-            fn build() -> #builder_name<#(#withouts),*> {
+            pub fn build() -> #builder_name<#(#withouts),*> {
                 #builder_name {
                     #(#field_inits),*
                 }

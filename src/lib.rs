@@ -141,7 +141,7 @@ fn impl_builder(ast: &syn::DeriveInput) -> quote::Tokens {
             }
         }
 
-        struct #builder_name<#generic_builder_fields> {
+        pub struct #builder_name<#generic_builder_fields> {
             #builder_fields
         }
 
